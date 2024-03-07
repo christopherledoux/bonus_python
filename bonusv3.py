@@ -1,18 +1,18 @@
 import random
-import numpy as np
 
 cards_type = ["♠","♣","♥","♦"]
-values = [2,3,4,5,6,7,8,9,10,11,12,13,14]
+values = ["2","3","4","5","6","7","8","9","10","11","12","13","14"]
 cards = []
 
-for value in values:
-    for card_type in cards_type:
+for card_type in cards_type:
+    for value in values:
         cards.append([value,card_type])
 
-cards_array = np.array(cards,dtype=object)
-random.shuffle(cards_array)
+random.shuffle(cards)
 
-player,bot = np.split(cards_array,2)
+player = []
+bot = []
 
-print(cards_array)
-
+while len(player) < 25:
+    player.extend(cards)
+    print(player)
